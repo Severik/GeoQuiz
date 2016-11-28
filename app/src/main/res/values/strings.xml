@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GeoQuiz</string>
+    <string name="btnYes">Да</string>
+    <string name="btnNo">Нет</string>
+    <string name="question1">Стамбул самый большой город Турции?</string>
+    <string name="answer1">Да, Стамбул самый большой город в Турции, его население почти 15 миллионов человек</string>
+    <string name="question2">У всех слонов 3 ноги?</string>
+    <string name="answer2">Нет у всех нормальных слонов, как и других животных по 4 ноги</string>
+    <string name="question3">Правда ли, что коты любят мяукать?</string>
+    <string name="answer3">Да, совершенно верно, таким способом они общаются между собой</string>
+    <string name="question4">Атлантический океан самый глубокий океан?</string>
+    <string name="answer4">Нет, самый глубой и большой океан - это Тихий океан, его максимальная глубина около 11км в Марианской впадине</string>
+    <string name="question5">У жирафа длинная шея?</string>
+    <string name="answer5">Да это верно, таким образом жираф может объедать самые вкусные молодые листья и ветви с крон деревьев</string>
+    <string name="question6">Арбуз это фрукт?</string>
+    <string name="answer6">Нет, на самом деле арбуз это ягода</string>
+    <string name="correct_toast">Верно!</string>
+    <string name="incorrect_toast">Неверно!</string>
+    <string name="next">Дальше</string>
+</resources>
