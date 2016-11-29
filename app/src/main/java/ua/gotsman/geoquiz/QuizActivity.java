@@ -28,6 +28,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+        mQuestionTextView = (TextView) findViewById(R.id.textView);
         updateQuestion();
 
         mYesButton = (Button) findViewById(R.id.yes_button);

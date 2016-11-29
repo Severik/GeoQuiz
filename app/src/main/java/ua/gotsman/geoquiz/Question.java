@@ -1,16 +1,16 @@
 package ua.gotsman.geoquiz;
 
 
-public class Question {
+class Question {
     private int mTextResId;
     private boolean mAnswerTrue;
 
-    public Question(int textresId, boolean answerTrue) {
-        mTextResId = textresId;
+    Question(int textResId, boolean answerTrue) {
+        mTextResId = textResId;
         mAnswerTrue = answerTrue;
     }
 
-    public int getTextResId() {
+    int getTextResId() {
         return mTextResId;
     }
 

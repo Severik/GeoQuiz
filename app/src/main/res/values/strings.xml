@@ -7,11 +7,11 @@
     <string name="question2">У всех слонов 3 ноги?</string>
     <string name="answer2">Нет у всех нормальных слонов, как и других животных по 4 ноги</string>
     <string name="question3">Правда ли, что коты любят мяукать?</string>
-    <string name="answer3">Да, совершенно верно, таким способом они общаются между собой</string>
+    <string name="answer3">Да, таким способом они общаются между собой</string>
     <string name="question4">Атлантический океан самый глубокий океан?</string>
     <string name="answer4">Нет, самый глубой и большой океан - это Тихий океан, его максимальная глубина около 11км в Марианской впадине</string>
     <string name="question5">У жирафа длинная шея?</string>
-    <string name="answer5">Да это верно, таким образом жираф может объедать самые вкусные молодые листья и ветви с крон деревьев</string>
+    <string name="answer5">Да, таким образом жираф может объедать самые вкусные молодые листья и ветви с крон деревьев</string>
     <string name="question6">Арбуз это фрукт?</string>
     <string name="answer6">Нет, на самом деле арбуз это ягода</string>
     <string name="correct_toast">Верно!</string>

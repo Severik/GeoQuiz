@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:padding="24dp"/>
+        android:padding="24dp"
+        tools:text="Вопрос"/>
 
     <LinearLayout
         android:orientation="horizontal"
