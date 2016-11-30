@@ -4,18 +4,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class QuizActivity extends AppCompatActivity {
+public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button mYesButton;
-    private Button mNoButton;
-    private Button mNextButton;
     private TextView mQuestionTextView;
     private int mCurrentIndex = 0;
 
-    private Question[] mQuestionBank = new Question[] {
+    private Question[] mQuestionBank = new Question[]{
             new Question(R.string.question1, true),
             new Question(R.string.question2, false),
             new Question(R.string.question3, true),
@@ -29,36 +27,54 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         mQuestionTextView = (TextView) findViewById(R.id.textView);
+        mQuestionTextView.setTextSize(22);
+        mQuestionTextView.setOnClickListener(this);
+        ImageButton prevButton = (ImageButton) findViewById(R.id.prev_button);
+        prevButton.setOnClickListener(this);
+        ImageButton nextButton = (ImageButton) findViewById(R.id.next_button);
+        nextButton.setOnClickListener(this);
+        Button yesButton = (Button) findViewById(R.id.yes_button);
+        yesButton.setOnClickListener(this);
+        Button noButton = (Button) findViewById(R.id.no_button);
+        noButton.setOnClickListener(this);
         updateQuestion();
-
-        mYesButton = (Button) findViewById(R.id.yes_button);
-        mYesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(QuizActivity.this, R.string.correct_toast, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mNoButton = (Button) findViewById(R.id.no_button);
-        mNoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(QuizActivity.this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mNextButton = (Button) findViewById(R.id.next_button);
-        mNextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
-                updateQuestion();
-            }
-        });
     }
 
     private void updateQuestion() {
         int question = mQuestionBank[mCurrentIndex].getTextResId();
         mQuestionTextView.setText(question);
+    }
+
+    private void checkAnswer(boolean userPressedTrue) {
+        boolean isAnswerTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
+        int messageResId;
+        if (userPressedTrue == isAnswerTrue) {
+            messageResId = R.string.correct_toast;
+        } else messageResId = R.string.incorrect_toast;
+        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.textView:
+                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                updateQuestion();
+                break;
+            case R.id.next_button:
+                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                updateQuestion();
+                break;
+            case R.id.prev_button:
+                mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
+                updateQuestion();
+                break;
+            case R.id.yes_button:
+                checkAnswer(true);
+                break;
+            case R.id.no_button:
+                checkAnswer(false);
+                break;
+        }
     }
 }

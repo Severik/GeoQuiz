@@ -37,10 +37,28 @@
             tools:ignore="ButtonStyle" />
     </LinearLayout>
 
-    <Button
-        android:text="@string/next"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/next_button" />
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:text="@string/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/prev_button"
+            android:src="@android:drawable/ic_media_previous"
+            android:layout_weight="1"
+            android:contentDescription="@string/prev"/>
+
+        <ImageButton
+            android:text="@string/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/next_button"
+            android:src="@android:drawable/ic_media_next"
+            android:layout_weight="1"
+            android:contentDescription="@string/next"/>
+    </LinearLayout>
 
 </LinearLayout>

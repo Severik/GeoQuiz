@@ -18,7 +18,7 @@ class Question {
         mTextResId = textResId;
     }
 
-    public boolean isAnswerTrue() {
+    boolean isAnswerTrue() {
         return mAnswerTrue;
     }
 
