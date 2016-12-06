@@ -1,5 +1,6 @@
 package ua.gotsman.geoquiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,6 +45,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         yesButton.setOnClickListener(this);
         Button noButton = (Button) findViewById(R.id.no_button);
         noButton.setOnClickListener(this);
+        Button cheatButton = (Button) findViewById(R.id.cheat_button);
+        cheatButton.setOnClickListener(this);
         updateQuestion();
     }
 
@@ -111,6 +114,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.no_button:
                 checkAnswer(false);
+                break;
+            case R.id.cheat_button:
+                startActivity(new Intent(QuizActivity.this, CheatActivity.class));
                 break;
         }
     }
