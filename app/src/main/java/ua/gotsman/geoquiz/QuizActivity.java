@@ -12,6 +12,7 @@ import android.widget.Toast;
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "QuizActivity";
+    private static final String KEY_INDEX = "index";
     private TextView mQuestionTextView;
     private int mCurrentIndex = 0;
 
@@ -27,6 +28,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
+        }
         Log.d(TAG, "onCreate(Bundle) called");
         setContentView(R.layout.activity_quiz);
         mQuestionTextView = (TextView) findViewById(R.id.textView);
@@ -109,5 +113,12 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 checkAnswer(false);
                 break;
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(TAG, "onSaveInstanceState");
+        outState.putInt(KEY_INDEX, mCurrentIndex);
     }
 }

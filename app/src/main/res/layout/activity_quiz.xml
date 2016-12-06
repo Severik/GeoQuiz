@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:padding="24dp"
-        tools:text="Вопрос"/>
+        tools:text="Вопрос"
+        android:textAlignment="center"/>
 
     <LinearLayout
         android:orientation="horizontal"
